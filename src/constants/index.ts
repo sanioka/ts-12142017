@@ -1,1 +1,0 @@
-export const BASE_URL: string = 'http://learn.javascript.ru/courses/groups/api';

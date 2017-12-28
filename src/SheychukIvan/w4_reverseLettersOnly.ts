@@ -1,10 +1,10 @@
-function reverceLettersOnly(str: string): string {
+export function reverceLettersOnly(str: string): string {
     const wordList: string[] = str.split(" ");
     const reverceList: string[] = [];
 
     for (let word of wordList) {
         const letters: string[] | null = word.match(/[a-zA-Z]+/gm);
-        const pos: any = getSymbolPotions(word);     
+        const pos: any = getSymbolPotions(word);
 
         if (letters) {
             const lettersArr: Array<string> = letters.join('').split("").reverse();

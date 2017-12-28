@@ -1,6 +1,6 @@
 type allowTypes = string | number | boolean;
 
-function isInArray(arr: Array<allowTypes>, ...rest: allowTypes[]): boolean {
+export function isInArray(arr: Array<allowTypes>, ...rest: allowTypes[]): boolean {
     for (let item of rest) {
         const inArr = arr.indexOf(item);
 
@@ -12,7 +12,7 @@ function isInArray(arr: Array<allowTypes>, ...rest: allowTypes[]): boolean {
     return true;
 }
 
-const arr: allowTypes[] = [1, "hello", true, 3, false, "bye"];
+//const arr: allowTypes[] = [1, "hello", true, 3, false, "bye"];
 
 // isInArray(arr, 1, true, "hello");
-console.log(isInArray(arr, 1, true, "hello"));
+// console.log(isInArray(arr, 1, true, "hello"));

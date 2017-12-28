@@ -1,1 +1,0 @@
-type CustomAction<T> = { type: string, payload: T };

@@ -6,3 +6,4 @@ node_modules
 **/*.js
 !webpack.config.js
 dist/
+.nyc_output/

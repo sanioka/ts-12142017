@@ -1,6 +1,6 @@
 type sn = string | number;
 // Number() , Number.isNaN
-function summator(...values: sn[]): number {
+export function summator(...values: sn[]): number {
     return values.reduce((sum: number, current: sn) => {
         if (!isNumber(current)) {
             current = parseFloat(current);
