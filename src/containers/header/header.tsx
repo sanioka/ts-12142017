@@ -1,11 +1,12 @@
 import * as  React from 'react';
-// TODO props type ???????
-// export type Props = {
-//   onSearch: Function;
-// }
+import { AnyAction } from 'redux';
 import './style.css';
+
+export type Props = {
+  onSearch:  (value: string) =>  AnyAction;
+};
 // tslint:disable-next-line
-export class Header extends React.Component<any> {
+export class Header extends React.Component<Props> {
   public onChange = ({ target: { value } }: { target: HTMLInputElement }) => {
     this.props.onSearch(value);
   };

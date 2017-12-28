@@ -1,12 +1,18 @@
 import * as  React from 'react';
 import { Item } from '../../reducers/items.reducer';
-// TODO props type ???????
-// export type Props = {
-//   onSearch: Function;
-// }
+import { SearchTerm } from '../../reducers/search-term.reducer';
+import { AnyAction } from 'redux';
+
 import './style.css';
+
+export type Props = {
+  items: Item[],
+  searchTerm: SearchTerm,
+  getItems: () => AnyAction
+};
+
 // tslint:disable-next-line
-export class Content extends React.Component<any> {
+export class Content extends React.Component<Props> {
   public componentDidMount(): void {
     this.props.getItems();
   }

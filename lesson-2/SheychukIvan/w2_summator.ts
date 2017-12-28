@@ -1,5 +1,5 @@
 type sn = string | number;
-
+// Number() , Number.isNaN
 function summator(...values: sn[]): number {
     return values.reduce((sum: number, current: sn) => {
         if (!isNumber(current)) {
@@ -15,7 +15,7 @@ function isNumber(val: sn): val is number {
 }
 
 /*********\ ?????
-function isNumeric(val: sn): val is string {  
+function isNumeric(val: sn): val is string {
     // return !isNaN(parseFloat(val)) && isFinite(val);
 }
 \*********/
