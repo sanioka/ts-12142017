@@ -48,6 +48,6 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   },
   "include": [
-    "lesson-1/class-work/**/*.ts"
+    "lesson-1/class-work/Ivanov**/*.ts"
   ]
 }
