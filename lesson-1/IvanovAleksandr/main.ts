@@ -100,15 +100,31 @@ function generateRecursive(list: IMenuItem2[] | IMenuItem2): string {
 }
 
 function generateMenu(list: IMenuItem2[]): string {
-    let content: string = `<ul>`;
-    content += generateRecursive(list);
-    content += `</ul>`;
-    return content;
+    return `<ul>${ generateRecursive(list) }</ul>`;
+}
+
+/**
+ * Вариант 2, сокращенный код
+ */
+function generateMenuV2(list: IMenuItem2[]) {
+    const result: string = list.map(({items, title}) => {
+
+        if (items) {
+            return `<li><a class="title">${title}</a>
+                    ${generateMenuV2(items)}
+                    </li>`;
+        } else {
+            return `<li><a>${title}</a></li>`;
+        }
+
+    }).join(" ");
+
+    return `<ul>${result}</ul>`;
 }
 
 let navMenuList2: HTMLDivElement | null = document.querySelector(".menu");
 if (navMenuList2) {
-    navMenuList2.innerHTML = generateMenu(menuData);
+    navMenuList2.innerHTML = generateMenuV2(menuData);
     navMenuList2.onclick = (ev: MouseEvent) => {
         const el = ev.target as HTMLAnchorElement;
         const classList = el.classList;
